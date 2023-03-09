@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import authReducer from "./auth";
 import currentUserReducer from './currentUser'
-import questionsReducer from './question'
+import questionsReducer from './questions'
 
 
 

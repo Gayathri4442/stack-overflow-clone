@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 import './AskQuestion.css'
-import  askQuestion  from '../../actions/question'
+import { askQuestion } from '../../actions/question'
 
 
 const AskQuestion = () => { 
@@ -23,16 +23,12 @@ const AskQuestion = () => {
         dispatch(askQuestion ({questionTitle, questionBody, questionTags, userPosted: User.result.name}, navigate))
             
         } 
-    
-
 
     const handleEnter = (e) => {
         if(e.key === 'Enter'){
             questionBody(questionBody + '\n')
         }
     }
-
-    
 
   return (
         <div className='ask-question'>

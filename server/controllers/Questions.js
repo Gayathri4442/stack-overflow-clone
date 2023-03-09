@@ -4,9 +4,9 @@ import mongoose from 'mongoose'
 
 
 export const AskQuestion = async (req, res) => {
+    console.log(req.body)
     const postQuestionData = req.body;
-    console.log(postQuestionData)
-    const postQuestion = new Questions({...postQuestionData});
+    const postQuestion = new Questions({...postQuestionData, userId: req.userId  });
     try {
          await postQuestion.save();
          res.status(200).json("Posted a question successfully")
@@ -15,4 +15,14 @@ export const AskQuestion = async (req, res) => {
         res.status(409).json("Couldn't post a question")
     }
 
+};
+
+export const getAllQuestions = async(req, res) => {
+    try {
+        const questionList = await Questions.find();
+        res.status(200).json( questionList );
+    } catch (error) {
+        res.status(404).json({message: error.message});
+        
+    }
 }

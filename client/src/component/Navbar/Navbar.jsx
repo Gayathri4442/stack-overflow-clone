@@ -59,19 +59,20 @@ function Navbar() {
           </Link>
         ) : (
           <>
-            <Avatar
+           <Avatar
               backgroundColor="#009dff"
-              px="10px"
-              py="7px"
+              px="7px"
+              py="12px"
               borderRadius="50%"
               color="white"
+              fontSize="18px"
             >
               <Link
                 to={`/Users/${User?.result?._id}`}
                 style={{ color: "white", textDecoration: "none" }}
               >
                 {User?.result?.name?.charAt(0).toUpperCase()}
-              </Link>{" "}
+              </Link>
             </Avatar>
             <button className="nav-item nav-links" onClick={handleLogout}>
               Log out
